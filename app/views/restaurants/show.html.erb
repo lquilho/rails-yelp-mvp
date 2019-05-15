@@ -1,0 +1,13 @@
+<div class="container body-color mt-5">
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %> <%= review.rating %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn button"%>
+<%= link_to "Restaurants list", restaurants_path%>
+</div>
